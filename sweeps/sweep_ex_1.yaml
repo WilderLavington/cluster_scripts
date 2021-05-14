@@ -1,0 +1,54 @@
+entity: wilderlavington
+method: bayes
+program: bc_trainer.py
+metric:
+  goal: minimize
+  name: log_loss_policy
+parameters:
+  algo:
+    values:
+    - RKL
+    - MLE
+    - FKL
+    - BC
+    - BC_det
+  bandwidth:
+    max: 1.5
+    min: -1.5
+  env_name:
+    values:
+    - Ant-v2
+  group:
+    value: bc_full_sweep
+  hidden_size:
+    values:
+    - 256
+    - 512
+    - 1024
+    - 2048
+    - 4096
+    - 8192
+  log_init_step_size:
+    max: 5.5
+    min: -0.5
+  log_lr:
+    max: 5.5
+    min: -9.5
+  model_type:
+    values:
+    - linear
+  nonlin:
+    values:
+    - tanh
+    - relu
+  num_steps:
+    value: 150000
+  policy_optim:
+    values:
+    - AdaGrad
+  replay_size:
+    value: 10000
+  sls_c:
+    max: 0.5
+    min: 0.01
+
